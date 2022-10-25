@@ -29,15 +29,9 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
-
 #include <X11/extensions/XShm.h>
-// Had to dig up XShm.c for this one.
-// It is in the libXext, but not in the XFree86 headers.
-#ifdef LINUX
-int XShmGetEventBase( Display* dpy ); // problems with g++?
-#include <errno.h>
-#endif
 
+#include <errno.h>
 #include <stdarg.h>
 #include <sys/time.h>
 #include <sys/types.h>
