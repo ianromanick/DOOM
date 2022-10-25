@@ -673,7 +673,7 @@ void M_SaveGame (int choice)
 //
 //      M_QuickSave
 //
-char    tempstring[80];
+char    tempstring[83];
 
 void M_QuickSaveResponse(int ch)
 {
