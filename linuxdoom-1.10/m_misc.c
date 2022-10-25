@@ -136,11 +136,11 @@ M_WriteFile
 int
 M_ReadFile
 ( char const*	name,
-  byte**	buffer )
+  uint8_t**	buffer )
 {
     int	handle, count, length;
     struct stat	fileinfo;
-    byte		*buf;
+    uint8_t		*buf;
 	
     handle = open (name, O_RDONLY | O_BINARY, 0666);
     if (handle == -1)
@@ -332,7 +332,7 @@ void M_SaveDefaults (void)
 //
 // M_LoadDefaults
 //
-extern byte	scantokey[128];
+extern uint8_t	scantokey[128];
 
 void M_LoadDefaults (void)
 {
@@ -424,7 +424,7 @@ typedef struct
     
     char		reserved;
     char		color_planes;
-    unsigned short	bytes_per_line;
+    unsigned short	uint8_ts_per_line;
     unsigned short	palette_type;
     
     char		filler[58];
@@ -438,15 +438,15 @@ typedef struct
 void
 WritePCXfile
 ( char*		filename,
-  byte*		data,
+  uint8_t*		data,
   int		width,
   int		height,
-  byte*		palette )
+  uint8_t*		palette )
 {
     int		i;
     int		length;
     pcx_t*	pcx;
-    byte*	pack;
+    uint8_t*	pack;
 	
     pcx = Z_Malloc (width*height*2+1000, PU_STATIC, NULL);
 
@@ -462,7 +462,7 @@ WritePCXfile
     pcx->vres = SHORT(height);
     memset (pcx->palette,0,sizeof(pcx->palette));
     pcx->color_planes = 1;		// chunky image
-    pcx->bytes_per_line = SHORT(width);
+    pcx->uint8_ts_per_line = SHORT(width);
     pcx->palette_type = SHORT(2);	// not a grey scale
     memset (pcx->filler,0,sizeof(pcx->filler));
 
@@ -482,12 +482,12 @@ WritePCXfile
     }
     
     // write the palette
-    *pack++ = 0x0c;	// palette ID byte
+    *pack++ = 0x0c;	// palette ID uint8_t
     for (i=0 ; i<768 ; i++)
 	*pack++ = *palette++;
     
     // write output file
-    length = pack - (byte *)pcx;
+    length = pack - (uint8_t *)pcx;
     M_WriteFile (filename, pcx, length);
 
     Z_Free (pcx);
@@ -500,7 +500,7 @@ WritePCXfile
 void M_ScreenShot (void)
 {
     int		i;
-    byte*	linear;
+    uint8_t*	linear;
     char	lbmname[12];
     
     // munge planar buffer to linear

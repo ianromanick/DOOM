@@ -98,7 +98,7 @@ mobj_t**	blocklinks;
 // Without special effect, this could be
 //  used as a PVS lookup as well.
 //
-byte*		rejectmatrix;
+uint8_t*		rejectmatrix;
 
 
 // Maintain single and multi player starting spots.
@@ -117,7 +117,7 @@ mapthing_t	playerstarts[MAXPLAYERS];
 //
 void P_LoadVertexes (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapvertex_t*	ml;
     vertex_t*		li;
@@ -154,7 +154,7 @@ void P_LoadVertexes (int lump)
 //
 void P_LoadSegs (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapseg_t*		ml;
     seg_t*		li;
@@ -197,7 +197,7 @@ void P_LoadSegs (int lump)
 //
 void P_LoadSubsectors (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapsubsector_t*	ms;
     subsector_t*	ss;
@@ -226,7 +226,7 @@ void P_LoadSubsectors (int lump)
 //
 void P_LoadSectors (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapsector_t*	ms;
     sector_t*		ss;
@@ -259,7 +259,7 @@ void P_LoadSectors (int lump)
 //
 void P_LoadNodes (int lump)
 {
-    byte*	data;
+    uint8_t*	data;
     int		i;
     int		j;
     int		k;
@@ -296,7 +296,7 @@ void P_LoadNodes (int lump)
 //
 void P_LoadThings (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapthing_t*		mt;
     int			numthings;
@@ -352,7 +352,7 @@ void P_LoadThings (int lump)
 //
 void P_LoadLineDefs (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     maplinedef_t*	mld;
     line_t*		ld;
@@ -433,7 +433,7 @@ void P_LoadLineDefs (int lump)
 //
 void P_LoadSideDefs (int lump)
 {
-    byte*		data;
+    uint8_t*		data;
     int			i;
     mapsidedef_t*	msd;
     side_t*		sd;

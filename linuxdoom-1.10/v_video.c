@@ -36,14 +36,14 @@
 
 
 // Each screen is [SCREENWIDTH*SCREENHEIGHT]; 
-byte*				screens[5];	
+uint8_t*				screens[5];	
  
 int				dirtybox[4]; 
 
 
 
 // Now where did these came from?
-byte gammatable[5][256] =
+uint8_t gammatable[5][256] =
 {
     {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,
      17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,
@@ -160,8 +160,8 @@ V_CopyRect
   int		desty,
   int		destscrn ) 
 { 
-    byte*	src;
-    byte*	dest; 
+    uint8_t*	src;
+    uint8_t*	dest;
 	 
 #ifdef RANGECHECK 
     if (srcx<0
@@ -206,9 +206,9 @@ V_DrawPatch
     int		count;
     int		col; 
     column_t*	column; 
-    byte*	desttop;
-    byte*	dest;
-    byte*	source; 
+    uint8_t*	desttop;
+    uint8_t*	dest;
+    uint8_t*	source;
     int		w; 
 	 
     y -= SHORT(patch->topoffset); 
@@ -237,12 +237,12 @@ V_DrawPatch
 
     for ( ; col<w ; x++, col++, desttop++)
     { 
-	column = (column_t *)((byte *)patch + LONG(patch->columnofs[col])); 
+	column = (column_t *)((uint8_t *)patch + LONG(patch->columnofs[col]));
  
 	// step through the posts in a column 
 	while (column->topdelta != 0xff ) 
 	{ 
-	    source = (byte *)column + 3; 
+	    source = (uint8_t *)column + 3;
 	    dest = desttop + column->topdelta*SCREENWIDTH; 
 	    count = column->length; 
 			 
@@ -251,8 +251,7 @@ V_DrawPatch
 		*dest = *source++; 
 		dest += SCREENWIDTH; 
 	    } 
-	    column = (column_t *)(  (byte *)column + column->length 
-				    + 4 ); 
+	    column = (column_t *)((uint8_t *)column + column->length + 4);
 	} 
     }			 
 } 
@@ -273,9 +272,9 @@ V_DrawPatchFlipped
     int		count;
     int		col; 
     column_t*	column; 
-    byte*	desttop;
-    byte*	dest;
-    byte*	source; 
+    uint8_t*	desttop;
+    uint8_t*	dest;
+    uint8_t*	source;
     int		w; 
 	 
     y -= SHORT(patch->topoffset); 
@@ -302,12 +301,12 @@ V_DrawPatchFlipped
 
     for ( ; col<w ; x++, col++, desttop++) 
     { 
-	column = (column_t *)((byte *)patch + LONG(patch->columnofs[w-1-col])); 
+	column = (column_t *)((uint8_t *)patch + LONG(patch->columnofs[w-1-col]));
  
 	// step through the posts in a column 
 	while (column->topdelta != 0xff ) 
 	{ 
-	    source = (byte *)column + 3; 
+	    source = (uint8_t *)column + 3;
 	    dest = desttop + column->topdelta*SCREENWIDTH; 
 	    count = column->length; 
 			 
@@ -316,8 +315,7 @@ V_DrawPatchFlipped
 		*dest = *source++; 
 		dest += SCREENWIDTH; 
 	    } 
-	    column = (column_t *)(  (byte *)column + column->length 
-				    + 4 ); 
+	    column = (column_t *)((uint8_t *)column + column->length + 4);
 	} 
     }			 
 } 
@@ -341,9 +339,9 @@ V_DrawPatchDirect
     int		count;
     int		col; 
     column_t*	column; 
-    byte*	desttop;
-    byte*	dest;
-    byte*	source; 
+    uint8_t*	desttop;
+    uint8_t*	dest;
+    uint8_t*	source;
     int		w; 
 	 
     y -= SHORT(patch->topoffset); 
@@ -367,13 +365,13 @@ V_DrawPatchDirect
     for ( col = 0 ; col<w ; col++) 
     { 
 	outp (SC_INDEX+1,1<<(x&3)); 
-	column = (column_t *)((byte *)patch + LONG(patch->columnofs[col])); 
+	column = (column_t *)((uint8_t *)patch + LONG(patch->columnofs[col]));
  
 	// step through the posts in a column 
 	 
 	while (column->topdelta != 0xff ) 
 	{ 
-	    source = (byte *)column + 3; 
+	    source = (uint8_t *)column + 3;
 	    dest = desttop + column->topdelta*SCREENWIDTH/4; 
 	    count = column->length; 
  
@@ -382,8 +380,7 @@ V_DrawPatchDirect
 		*dest = *source++; 
 		dest += SCREENWIDTH/4; 
 	    } 
-	    column = (column_t *)(  (byte *)column + column->length 
-				    + 4 ); 
+	    column = (column_t *)((uint8_t *)column + column->length + 4);
 	} 
 	if ( ((++x)&3) == 0 ) 
 	    desttop++;	// go to next byte, not next plane 
@@ -403,9 +400,9 @@ V_DrawBlock
   int		scrn,
   int		width,
   int		height,
-  byte*		src ) 
+  uint8_t*		src)
 { 
-    byte*	dest; 
+    uint8_t*	dest;
 	 
 #ifdef RANGECHECK 
     if (x<0
@@ -443,9 +440,9 @@ V_GetBlock
   int		scrn,
   int		width,
   int		height,
-  byte*		dest ) 
+  uint8_t*		dest)
 { 
-    byte*	src; 
+    uint8_t*	src;
 	 
 #ifdef RANGECHECK 
     if (x<0
@@ -477,7 +474,7 @@ V_GetBlock
 void V_Init (void) 
 { 
     int		i;
-    byte*	base;
+    uint8_t*	base;
 		
     // stick these in low dos memory on PCs
 

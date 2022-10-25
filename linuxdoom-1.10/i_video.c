@@ -521,7 +521,7 @@ void I_FinishUpdate (void)
 //
 // I_ReadScreen
 //
-void I_ReadScreen (byte* scr)
+void I_ReadScreen (uint8_t* scr)
 {
     memcpy (scr, screens[0], SCREENWIDTH*SCREENHEIGHT);
 }
@@ -532,7 +532,7 @@ void I_ReadScreen (byte* scr)
 //
 static XColor	colors[256];
 
-void UploadNewPalette(Colormap cmap, byte *palette)
+void UploadNewPalette(Colormap cmap, uint8_t *palette)
 {
 
     register int	i;
@@ -576,7 +576,7 @@ void UploadNewPalette(Colormap cmap, byte *palette)
 //
 // I_SetPalette
 //
-void I_SetPalette (byte* palette)
+void I_SetPalette (uint8_t* palette)
 {
     UploadNewPalette(X_cmap, palette);
 }
