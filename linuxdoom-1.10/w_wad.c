@@ -21,6 +21,8 @@
 //
 //-----------------------------------------------------------------------------
 
+#include <inttypes.h>
+
 #ifdef NORMALUNIX
 #include <ctype.h>
 #include <sys/types.h>

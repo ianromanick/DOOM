@@ -23,6 +23,7 @@
 #ifndef __I_VIDEO__
 #define __I_VIDEO__
 
+#include <inttypes.h>
 
 #include "doomtype.h"
 

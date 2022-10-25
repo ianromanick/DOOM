@@ -23,6 +23,7 @@
 #ifndef __D_EVENT__
 #define __D_EVENT__
 
+#include <inttypes.h>
 
 #include "doomtype.h"
 

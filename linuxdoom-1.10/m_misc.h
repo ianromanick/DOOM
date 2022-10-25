@@ -23,8 +23,9 @@
 #ifndef __M_MISC__
 #define __M_MISC__
 
-
+#include <inttypes.h>
 #include "doomtype.h"
+
 //
 // MISC
 //

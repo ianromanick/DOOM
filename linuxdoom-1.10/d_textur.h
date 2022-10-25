@@ -24,10 +24,9 @@
 #ifndef __D_TEXTUR__
 #define __D_TEXTUR__
 
+#include <inttypes.h>
+
 #include "doomtype.h"
-
-
-
 
 //
 // Flats?

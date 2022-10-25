@@ -24,6 +24,10 @@
 //
 //-----------------------------------------------------------------------------
 
+#if __STDC_VERSION__ >= 199901L
+#include <stdint.h>
+#endif
+
 #ifdef __GNUG__
 #pragma implementation "m_bbox.h"
 #endif
@@ -34,8 +38,8 @@
 
 void M_ClearBox (fixed_t *box)
 {
-    box[BOXTOP] = box[BOXRIGHT] = MININT;
-    box[BOXBOTTOM] = box[BOXLEFT] = MAXINT;
+    box[BOXTOP] = box[BOXRIGHT] = INT32_MIN;
+    box[BOXBOTTOM] = box[BOXLEFT] = INT32_MAX;
 }
 
 void

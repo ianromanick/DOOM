@@ -23,6 +23,8 @@
 #ifndef __D_TICCMD__
 #define __D_TICCMD__
 
+#include <inttypes.h>
+
 #include "doomtype.h"
 
 #ifdef __GNUG__

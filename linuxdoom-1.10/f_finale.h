@@ -23,6 +23,7 @@
 #ifndef __F_FINALE__
 #define __F_FINALE__
 
+#include <inttypes.h>
 
 #include "doomtype.h"
 #include "d_event.h"

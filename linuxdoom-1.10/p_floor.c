@@ -367,7 +367,7 @@ EV_DoFloor
 
 	  case raiseToTexture:
 	  {
-	      int	minsize = MAXINT;
+	      int	minsize = INT32_MAX;
 	      side_t*	side;
 				
 	      floor->direction = 1;

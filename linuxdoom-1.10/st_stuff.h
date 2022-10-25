@@ -24,6 +24,8 @@
 #ifndef __STSTUFF_H__
 #define __STSTUFF_H__
 
+#include <inttypes.h>
+
 #include "doomtype.h"
 #include "d_event.h"
 
