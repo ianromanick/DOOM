@@ -26,10 +26,6 @@
 #endif
 #include "m_swap.h"
 
-
-// Not needed with big endian.
-#ifndef __BIG_ENDIAN__
-
 // Swap 16bit, that is, MSB and LSB byte.
 unsigned short SwapSHORT(unsigned short x)
 {
@@ -46,8 +42,3 @@ unsigned long SwapLONG( unsigned long x)
 	| ((x<<8) & 0xff0000)
 	| (x<<24);
 }
-
-
-#endif
-
-
