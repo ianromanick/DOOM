@@ -32,6 +32,8 @@
 
 #ifndef LINUX
 #include <sys/filio.h>
+#else
+#include <errno.h>
 #endif
 
 #include <fcntl.h>
@@ -160,7 +162,6 @@ myioctl
   int*	arg )
 {   
     int		rc;
-    extern int	errno;
     
     rc = ioctl(fd, command, arg);  
     if (rc < 0)
