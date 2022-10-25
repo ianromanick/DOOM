@@ -620,6 +620,11 @@ P_SetupLevel
     // if working with a devlopment map, reload it
     W_Reload ();			
 	   
+    if (map < 0)
+	    map = 0;
+    else if (map > 9999)
+	    map = 9999;
+
     // find map name
     if ( gamemode == commercial)
     {
