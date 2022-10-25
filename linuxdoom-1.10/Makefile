@@ -6,7 +6,8 @@
 #
 CC=  gcc  # gcc or g++
 
-CFLAGS=-g -Wall -DNORMALUNIX -DLINUX # -DUSEASM 
+CFLAGS=-g -Wall -DNORMALUNIX -DLINUX -DHAVE_ALLOCA_H # -DUSEASM
+#CFLAGS=-g -Wall -DNORMALUNIX -DHAVE_ALLOCA_H # For Solaris
 LDFLAGS=-L/usr/X11R6/lib
 LIBS=-lXext -lX11 -lnsl -lm
 
