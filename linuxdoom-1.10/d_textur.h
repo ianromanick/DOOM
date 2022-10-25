@@ -26,8 +26,6 @@
 
 #include <inttypes.h>
 
-#include "doomtype.h"
-
 //
 // Flats?
 //

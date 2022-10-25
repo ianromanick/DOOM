@@ -35,7 +35,6 @@
 #define O_BINARY		0
 #endif
 
-#include "doomtype.h"
 #include "m_swap.h"
 #include "i_system.h"
 #include "z_zone.h"

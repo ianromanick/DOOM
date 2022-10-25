@@ -24,7 +24,6 @@
 #include <inttypes.h>
 #include "stdlib.h"
 
-#include "doomtype.h"
 #include "i_system.h"
 
 #ifdef __GNUG__

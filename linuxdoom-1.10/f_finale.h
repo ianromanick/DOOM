@@ -25,7 +25,6 @@
 
 #include <inttypes.h>
 
-#include "doomtype.h"
 #include "d_event.h"
 //
 // FINALE

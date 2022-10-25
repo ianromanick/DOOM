@@ -25,7 +25,6 @@
 #include <stdbool.h>
 #include <inttypes.h>
 
-#include "doomtype.h"
 #include "sounds.h"
 
 //

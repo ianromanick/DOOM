@@ -27,7 +27,6 @@
 
 #include <inttypes.h>
 
-#include "doomtype.h"
 #include "doomdef.h"
 
 // Needed because we are refering to patches.

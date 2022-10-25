@@ -281,12 +281,6 @@ typedef enum
 
 #define KEY_LALT	KEY_RALT
 
-
-
-// DOOM basic types (bool),
-//  and max/min values.
-//#include "doomtype.h"
-
 // Fixed point.
 //#include "m_fixed.h"
 
