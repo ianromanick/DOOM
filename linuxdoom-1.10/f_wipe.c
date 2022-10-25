@@ -35,7 +35,7 @@
 //
 
 // when zero, stop the wipe
-static boolean	go = 0;
+static bool	go = 0;
 
 static uint8_t*	wipe_scr_start;
 static uint8_t*	wipe_scr_end;
@@ -80,7 +80,7 @@ wipe_doColorXForm
   int	height,
   int	ticks )
 {
-    boolean	changed;
+    bool	changed;
     uint8_t*	w;
     uint8_t*	e;
     int		newval;
@@ -176,7 +176,7 @@ wipe_doMelt
     
     short*	s;
     short*	d;
-    boolean	done = true;
+    bool	done = true;
 
     width/=2;
 

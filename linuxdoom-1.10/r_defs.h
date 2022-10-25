@@ -23,6 +23,7 @@
 #ifndef __R_DEFS__
 #define __R_DEFS__
 
+#include <stdbool.h>
 
 // Screenwidth.
 #include "doomdef.h"
@@ -429,7 +430,7 @@ typedef struct
     // If false use 0 for any position.
     // Note: as eight entries are available,
     //  we might as well insert the same name eight times.
-    boolean	rotate;
+    bool	rotate;
 
     // Lump to use for view angles 0-7.
     short	lump[8];

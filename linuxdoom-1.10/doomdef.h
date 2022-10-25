@@ -23,6 +23,7 @@
 #ifndef __DOOMDEF__
 #define __DOOMDEF__
 
+#include <stdbool.h>
 #include <inttypes.h>
 #include <stdio.h>
 #include <string.h>
@@ -282,7 +283,7 @@ typedef enum
 
 
 
-// DOOM basic types (boolean),
+// DOOM basic types (bool),
 //  and max/min values.
 //#include "doomtype.h"
 

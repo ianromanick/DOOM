@@ -49,7 +49,7 @@ fixed_t		tmy;
 
 // If "floatok" true, move would be ok
 // if within "tmfloorz - tmceilingz".
-boolean		floatok;
+bool		floatok;
 
 fixed_t		tmfloorz;
 fixed_t		tmceilingz;
@@ -75,7 +75,7 @@ int		numspechit;
 //
 // PIT_StompThing
 //
-boolean PIT_StompThing (mobj_t* thing)
+bool PIT_StompThing (mobj_t* thing)
 {
     fixed_t	blockdist;
 		
@@ -108,7 +108,7 @@ boolean PIT_StompThing (mobj_t* thing)
 //
 // P_TeleportMove
 //
-boolean
+bool
 P_TeleportMove
 ( mobj_t*	thing,
   fixed_t	x,
@@ -183,7 +183,7 @@ P_TeleportMove
 // PIT_CheckLine
 // Adjusts tmfloorz and tmceilingz as lines are contacted
 //
-boolean PIT_CheckLine (line_t* ld)
+bool PIT_CheckLine (line_t* ld)
 {
     if (tmbbox[BOXRIGHT] <= ld->bbox[BOXLEFT]
 	|| tmbbox[BOXLEFT] >= ld->bbox[BOXRIGHT]
@@ -246,10 +246,10 @@ boolean PIT_CheckLine (line_t* ld)
 //
 // PIT_CheckThing
 //
-boolean PIT_CheckThing (mobj_t* thing)
+bool PIT_CheckThing (mobj_t* thing)
 {
     fixed_t		blockdist;
-    boolean		solid;
+    bool		solid;
     int			damage;
 		
     if (!(thing->flags & (MF_SOLID|MF_SPECIAL|MF_SHOOTABLE) ))
@@ -368,7 +368,7 @@ boolean PIT_CheckThing (mobj_t* thing)
 //  speciallines[]
 //  numspeciallines
 //
-boolean
+bool
 P_CheckPosition
 ( mobj_t*	thing,
   fixed_t	x,
@@ -444,7 +444,7 @@ P_CheckPosition
 // Attempt to move to a new position,
 // crossing special lines unless MF_TELEPORT is set.
 //
-boolean
+bool
 P_TryMove
 ( mobj_t*	thing,
   fixed_t	x,
@@ -524,9 +524,9 @@ P_TryMove
 // the z will be set to the lowest value
 // and false will be returned.
 //
-boolean P_ThingHeightClip (mobj_t* thing)
+bool P_ThingHeightClip (mobj_t* thing)
 {
-    boolean		onfloor;
+    bool		onfloor;
 	
     onfloor = (thing->z == thing->floorz);
 	
@@ -630,7 +630,7 @@ void P_HitSlideLine (line_t* ld)
 //
 // PTR_SlideTraverse
 //
-boolean PTR_SlideTraverse (intercept_t* in)
+bool PTR_SlideTraverse (intercept_t* in)
 {
     line_t*	li;
 	
@@ -809,7 +809,7 @@ extern fixed_t	bottomslope;
 // PTR_AimTraverse
 // Sets linetaget and aimslope when a target is aimed at.
 //
-boolean
+bool
 PTR_AimTraverse (intercept_t* in)
 {
     line_t*		li;
@@ -893,7 +893,7 @@ PTR_AimTraverse (intercept_t* in)
 //
 // PTR_ShootTraverse
 //
-boolean PTR_ShootTraverse (intercept_t* in)
+bool PTR_ShootTraverse (intercept_t* in)
 {
     fixed_t		x;
     fixed_t		y;
@@ -1089,7 +1089,7 @@ P_LineAttack
 //
 mobj_t*		usething;
 
-boolean	PTR_UseTraverse (intercept_t* in)
+bool	PTR_UseTraverse (intercept_t* in)
 {
     int		side;
 	
@@ -1158,7 +1158,7 @@ int		bombdamage;
 // "bombsource" is the creature
 // that caused the explosion at "bombspot".
 //
-boolean PIT_RadiusAttack (mobj_t* thing)
+bool PIT_RadiusAttack (mobj_t* thing)
 {
     fixed_t	dx;
     fixed_t	dy;
@@ -1244,14 +1244,14 @@ P_RadiusAttack
 //  the way it was and call P_ChangeSector again
 //  to undo the changes.
 //
-boolean		crushchange;
-boolean		nofit;
+bool		crushchange;
+bool		nofit;
 
 
 //
 // PIT_ChangeSector
 //
-boolean PIT_ChangeSector (mobj_t*	thing)
+bool PIT_ChangeSector (mobj_t*	thing)
 {
     mobj_t*	mo;
 	
@@ -1314,10 +1314,10 @@ boolean PIT_ChangeSector (mobj_t*	thing)
 //
 // P_ChangeSector
 //
-boolean
+bool
 P_ChangeSector
 ( sector_t*	sector,
-  boolean	crunch )
+  bool	crunch )
 {
     int		x;
     int		y;
